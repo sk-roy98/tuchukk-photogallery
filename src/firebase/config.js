@@ -15,7 +15,7 @@ import 'firebase/database'
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-const tuchukkStorage= firebase.storage;
-const tuchukkDatabase= firebase.database;
+const tuchukkStorage= firebase.storage();
+const tuchukkFirestore= firebase.firestore();
 
-export{tuchukkStorage,tuchukkDatabase};
+export {tuchukkStorage,tuchukkFirestore};
