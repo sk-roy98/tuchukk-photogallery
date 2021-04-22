@@ -1,5 +1,9 @@
 import './App.css';
-import Upload from './components/Upload'
+import ImageGrid from './components/ImageGrid';
+import Modal from './components/Modal';
+import Upload from './components/Upload';
+import Modal from './components/Modal';
+
 function App() {
   return (
     <div className="App">
@@ -10,6 +14,8 @@ function App() {
         <h2 className= "App__sectionName" >Your Pictures</h2>
         <main>
           <Upload/>
+          <ImageGrid/>
+          <Modal/>
         </main>
       </div>
     </div>
