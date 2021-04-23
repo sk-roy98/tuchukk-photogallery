@@ -1,10 +1,11 @@
 import './App.css';
+import React, { useState } from 'react';
 import ImageGrid from './components/ImageGrid';
 import Modal from './components/Modal';
 import Upload from './components/Upload';
-import Modal from './components/Modal';
 
 function App() {
+  const[selectedImg, setSelectedImg] = useState(null);
   return (
     <div className="App">
       <header>
@@ -12,10 +13,10 @@ function App() {
       </header>
       <div className = "App__container">
         <h2 className= "App__sectionName" >Your Pictures</h2>
-        <main>
+        <main className="App">
           <Upload/>
-          <ImageGrid/>
-          <Modal/>
+          <ImageGrid setSelectedImg={setSelectedImg}/>
+          {selectedImg && <Modal selectedImg = {selectedImg} setSelectedImg={setSelectedImg}  />}
         </main>
       </div>
     </div>
