@@ -5,9 +5,9 @@ const ImageGrid = ({ setSelectedImg }) =>{
     const { docs } = useFirestore('images');
 
     return (
-        <div className="imageGrid" >
+        <div className="ImageGrid" >
             {docs && docs.map(doc =>
-                <div className="imageWrap" key = {doc.id} 
+                <div className="ImageGrid__wrap" key = {doc.id} 
                 onClick={() => setSelectedImg(doc.url)}>  {/*why key is used*/}
                     <img src={doc.url} alt="uploaded pic"/>
                 </div>
