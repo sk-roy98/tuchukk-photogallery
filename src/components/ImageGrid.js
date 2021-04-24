@@ -13,9 +13,9 @@ const ImageGrid = ({ setSelectedImg }) =>{
                 whileHover = {{opacity: 1}}
                 onClick={() => setSelectedImg(doc.url)}>  {/*why key is used*/}
                     <motion.img src={doc.url} alt="uploaded pic"
-                        initial = {{opacity: 0.3}}
+                        initial = {{opacity: 0}}
                         animate = {{opacity: 1}}
-                        transition = {{delay: 0.8}}
+                        transition = {{delay: 1}}
                     />
                 </motion.div>
             )}            
