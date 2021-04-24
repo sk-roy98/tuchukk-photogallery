@@ -142,16 +142,18 @@ label:hover{
         padding-left:1rem ;
     }
     .ImageGrid__wrap {
-      width: 6rem;
-      height: 6rem;
+      width: 6.6rem;
+      height: 6.6rem;
+      opacity: 1;
       overflow: hidden;
     }
     .ImageGrid{
-        width: 96vw;
+        width: 95vw;
         /* margin: 1rem auto; */
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
         row-gap: 0.6rem;
+        column-gap: 0rem;
         align-items: center;
         justify-items: center;
     }
