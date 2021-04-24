@@ -3,7 +3,7 @@
 
 :root{
     --primary: rgba(133, 8, 60, 0.938);
-    --secondary: #f5d9e7e3;
+    --secondary: #f398b7e8;
     --error: rgb(255, 39, 23);
 }
 *{
@@ -60,11 +60,14 @@ header{
 
 .progressBar{
     background-color: var(--secondary);
-    height: 3.5px;
+    height: 2.5px;
+    margin-top: 1rem;
+    width: 100%;
 }
 .upload{
     margin: 20px auto 0;
     text-align: center;
+    width: 750px;
 }
 label input{
     height: 0;
@@ -102,7 +105,7 @@ label:hover{
     row-gap: 1rem;
     align-items: center;
     justify-items: center;
-    
+    opacity: 0.85;
 }
 
 .ImageGrid__wrap{
@@ -134,14 +137,13 @@ label:hover{
         justify-items: center;
     }
     .Modal__display img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        
         box-shadow: 4px 7px 15px rgba(0,0,0,0.5);
       }
 }
 .Modal__display{
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
