@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ProgressBar from './ProgressBar';
+import { BiMessageSquareAdd } from "react-icons/bi";
 
 const UploadForm = () => {
     const [file, setFile] = useState(null) ;
@@ -21,18 +22,18 @@ const UploadForm = () => {
     }
 
     return(
-        <form>
+        <div className = "upload" >
 
             <label>
                 <input type="file" onChange= {changeHandler} style= {{display: 'none'}}/>
-                <span className="Upload__button">+</span>
+                <span className="Upload__button"><BiMessageSquareAdd/></span>
             </label> 
             <div className = "output">
               {error && <div className = "Upload__error">{error}</div>}
               {file && <div className = "Upload__file">{file.name}</div>}
               {file && <ProgressBar file = {file} setFile = {setFile} />}
             </div>     
-        </form>
+        </div>
 
     )
 

@@ -1,15 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 :root{
-    --primary: #f5d9e7e3;
-    --secondary: rgba(133, 8, 60, 0.938);
-    --tertiary: 
+    --primary: rgba(133, 8, 60, 0.938);
+    --secondary: #f5d9e7e3;
+    --error: rgb(255, 39, 23);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
 }
 .App{
     width: 100%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
 }
+
+
 header{
-    width: 100;
+    width: 100%;
     height:3rem;
     margin: 0;
     align-items: center;
@@ -20,49 +34,124 @@ header{
     padding: 0.4rem 1.5rem;
 
 }
-.App__logoContainer{
-    height: 2.6rem;
-    margin: 0.1rem;
+/* .App__logoContainer{
+    height: 2.31rem;
+    margin: 0rem;
     padding: 0 , 3px;
     background-color: var(--secondary);
     box-shadow: 1.4px 2.5px 1.7px #41010afa; ;
     border-top-right-radius: 10px ;
     border-bottom-right-radius: 10px ;
-}
+} */
 .App__logo{
-    font-size: 1.7rem;
-    margin: 0 1rem
+    font-size: 2.2rem;
+    margin: 0rem;
+    font-family: 'Courgette', cursive;
 }
 .App__container{
     margin: 1rem 2.5rem; 
     height: 100vh;
-    max-width: 750px;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .progressBar{
     background-color: var(--secondary);
     height: 3.5px;
 }
-.ImageGrid{
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
-    /* position: absolute; */
+.upload{
+    margin: 20px auto 0;
+    text-align: center;
 }
-.ImageGrid__wrap{
-    /* overflow: hidden; */
+label input{
     height: 0;
-    padding: 50%, 0;
-    /* padding controls height, will be perfectly square regardless of width */
-    position:relative;
-    opacity: 0.9;
+    width: 0;
+    opacity: 0;
+}
+label{
+    display: block;
+    width: 38px;
+    height: 38px;
+    padding: 0.35rem 0.3rem 0rem 0.4rem ;
+    border-radius: 100rem;
+    line-height: 30px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 25px;
+    display:  inline-flex;
+    align-items: center;
+    justify-items: center;
+}
+label:hover{
+    background: var(--primary);
+    color: white;
+}
+.Upload__error{
+    color: var(--error);
+
+}
+  
+.ImageGrid{
+    width: 60%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    row-gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+.ImageGrid__wrap{
+
+    width: 15rem;
+    height: 15rem;
+    overflow: hidden;
 }
 .ImageGrid__wrap img{
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 150%;
-    position: absolute;
-    top:0;
-    left:0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="ImageGrid__wrap"] {
+      width: 6rem;
+      height: 6rem;
+      overflow: hidden;
+    }
+    [class*="ImageGrid"]{
+        width: 95%;
+        margin: 1rem auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+        row-gap: 0.2rem;
+        align-items: center;
+        justify-items: center;
+    }
+    .Modal__display img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 4px 7px 15px rgba(0,0,0,0.5);
+      }
+}
+.Modal__display{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+  }
+  .Modal__display img{
+    display: block;
+    max-width: 60%;
+    max-height: 80%;
+    margin: 60px auto;
+    box-shadow: 4px 7px 9px rgba(0,0,0,0.5);
+  }
